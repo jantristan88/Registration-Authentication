@@ -1,0 +1,58 @@
+<html>
+
+
+<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+<style>
+
+.top{
+	font-family: 'Gloria Hallelujah', cursive;}
+.body{
+	align-items:  : center;}
+
+</style>
+
+<body background = table-2879213_1280.jpg>
+
+<div class = body>
+	<p><h1 class=top><center> Welcome Muncher!</center> </h1></p>
+	<center><input id="zip" name="zip" type="text" pattern="[0-9]*" value= "Zip Code"></center><br />
+	<center><button id="myBtn" onclick="javascript:alert('Hello World!')"> Enter</button><center>
+	<script>
+		var input = document.getElementById("myInput");
+		input.addEventListener("keyup", function(event) {
+  		if (event.keyCode === 13) {
+   			event.preventDefault();
+   			document.getElementById("myBtn").click();
+  			}
+			});
+	</script>
+	<h4><center> OR </center></h4>
+	<p><center>Click the button to get your coordinates.</center></p>
+
+	<!-- #Get your Latitude and Longitude -->
+	<center><button onclick="getLocation()">Muncher Location</button><center>
+
+	<p id="demo"></p>
+
+	<script>
+	var x = document.getElementById("demo");
+
+	function getLocation() {
+	  if (navigator.geolocation) {
+	    navigator.geolocation.getCurrentPosition(showPosition);
+	  } else { 
+	    x.innerHTML = "Geolocation is not supported by this browser.";
+	  }
+	}
+
+	function showPosition(position) {
+	  x.innerHTML = "Latitude: " + position.coords.latitude + 
+	  "<br>Longitude: " + position.coords.longitude;
+	}
+	</script>
+</div>
+
+
+
+</body>
+</html>
